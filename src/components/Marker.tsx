@@ -6,6 +6,14 @@ import { WiRaindrop } from "react-icons/wi";
 import { MdNorth, MdNorthEast, MdNorthWest, MdSouth, MdSouthEast, MdSouthWest, MdWest, MdEast } from "react-icons/md";
 import "../Leaflet.css";
 import { LocationType, WeatherBoxProps, WeatherData } from "../types";
+/* import markerIcon from "../assets/marker-icon.png"; */
+import markerIcon from "../../node_modules/leaflet/dist/images/marker-icon.png";
+import { Icon } from "leaflet";
+
+const myIcon = new Icon({
+  iconUrl: markerIcon,
+  iconSize: [25, 41],
+});
 
 const transformDate = (date: number) => {
   return moment.unix(date).tz("Europe/Helsinki");
@@ -151,7 +159,7 @@ export const MarkerWithWeather = ({ location }: { location: LocationType }) => {
   const fetchWeatherData = async (lat: number, lng: number) => {
     const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
     const res = await fetch(
-      `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lng}&units=metric&appid=${apiKey}`
+      `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lng}&units=metric&appid=${apiKey}`
     );
 
     if (!res.ok) {
@@ -166,7 +174,11 @@ export const MarkerWithWeather = ({ location }: { location: LocationType }) => {
   const forecastWidth = useBreakpointValue({ base: "320px", md: "850px" });
 
   return (
-    <Marker position={[location[1] as number, location[2] as number]} eventHandlers={{ click: handleClick }}>
+    <Marker
+      icon={myIcon}
+      position={[location[1] as number, location[2] as number]}
+      eventHandlers={{ click: handleClick }}
+    >
       <Popup maxWidth={850}>
         <Box width={boxWidth}>
           {loading && <Text>Ladataan..</Text>}
