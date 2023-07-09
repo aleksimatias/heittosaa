@@ -10,3 +10,7 @@
 .popup div {
   background-color: blue;
 }
+
+.leaflet-control-attribution {
+  bottom: 80px !important;
+}

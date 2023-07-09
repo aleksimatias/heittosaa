@@ -6,8 +6,7 @@ import { WiRaindrop } from "react-icons/wi";
 import { MdNorth, MdNorthEast, MdNorthWest, MdSouth, MdSouthEast, MdSouthWest, MdWest, MdEast } from "react-icons/md";
 import "../Leaflet.css";
 import { LocationType, WeatherBoxProps, WeatherData } from "../types";
-/* import markerIcon from "../assets/marker-icon.png"; */
-import markerIcon from "../../node_modules/leaflet/dist/images/marker-icon.png";
+import markerIcon from "../assets/marker-icon.png";
 import { Icon } from "leaflet";
 
 const myIcon = new Icon({

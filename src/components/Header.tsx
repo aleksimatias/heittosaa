@@ -12,7 +12,7 @@ export default function Header({ onOpen, isLoading, setIsLoading }: any) {
   };
 
   return (
-    <Flex bgColor="#3f3f3f" pos="sticky" w="100%" pl="5" py="5" justifyContent="space-between">
+    <Flex bgColor="#3f3f3f" pos="fixed" w="100%" pl="5" py="5" justifyContent="space-between" top="0" zIndex="999">
       <Box justifyItems="flex-start" pl="5">
         <Image aria-label="logo" src={logo} w="50%" objectFit="contain" transform="scale(1.5)" />
       </Box>

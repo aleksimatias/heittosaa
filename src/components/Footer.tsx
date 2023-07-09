@@ -42,6 +42,9 @@ export default function Footer() {
       borderColor="textAbout"
       px="5"
       overflow="hidden"
+      pos="fixed"
+      bottom="0"
+      zIndex="999"
     >
       <Box>
         <a href="https://www.buymeacoffee.com/aleksimatias" target="_blank" rel="noreferrer">
