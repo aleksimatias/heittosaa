@@ -1,0 +1,12 @@
+.leaflet-container {
+  width: 100%;
+  height: 100vh;
+}
+
+.request-popup .leaflet-popup-content-wrapper {
+  border-radius: 0px;
+}
+
+.popup div {
+  background-color: blue;
+}
